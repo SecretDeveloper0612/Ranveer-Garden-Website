@@ -14,9 +14,9 @@ export default function ContactPage() {
           
           <div className={styles.contactInfo}>
             <span className={styles.eyebrow}>GET IN TOUCH</span>
-            <h2>Let's Plan Your Perfect Event</h2>
+            <h2>Let&apos;s Plan Your Perfect Event</h2>
             <p className={styles.introText}>
-              Whether you're planning a monumental celebration or seeking a luxurious retreat, our team is ready to assist you in making it a reality.
+              Whether you&apos;re planning a monumental celebration or seeking a luxurious retreat, our team is ready to assist you in making it a reality.
             </p>
 
             <div className={styles.infoGroup}>
