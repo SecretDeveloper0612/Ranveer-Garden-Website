@@ -1,0 +1,134 @@
+.section {
+  padding: 10rem 0;
+  background-color: var(--color-forest);
+  color: var(--color-ivory);
+  text-align: center;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-champagne);
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  line-height: 1.1;
+  color: var(--color-ivory);
+  margin-bottom: 4rem;
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  /* Create fade effect on left and right edges */
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  padding: 1rem 0;
+}
+
+.slideTrack {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  /* Hardware accelerated smooth animation */
+  animation: scroll 40s linear infinite;
+  will-change: transform;
+}
+
+.slideTrack:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Translate exactly half of the total width including gap */
+    transform: translateX(calc(-50% - 1rem));
+  }
+}
+
+.slide {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 2.5rem;
+  border-radius: 16px;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.slide:hover {
+  transform: translateY(-5px);
+  border-color: rgba(195, 162, 112, 0.3); /* champagne color */
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.name {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--color-champagne);
+  font-weight: 600;
+}
+
+.meta {
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.googleIcon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+}
+
+.stars {
+  color: #FBBC05;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.quote {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-ivory);
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .slide {
+    width: 320px;
+    padding: 1.75rem;
+  }
+}

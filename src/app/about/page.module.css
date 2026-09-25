@@ -1,0 +1,160 @@
+.main {
+  min-height: 100vh;
+}
+
+.hero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-forest); /* Fallback */
+  /* In a real scenario, you'd add a background image here */
+  background: linear-gradient(rgba(16, 33, 23, 0.7), rgba(16, 33, 23, 0.7)), url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--color-ivory);
+  text-align: center;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  animation: fadeIn 1s ease-out;
+}
+
+.heroContent h1 {
+  font-size: 4rem;
+  color: var(--color-champagne);
+  margin-bottom: 1rem;
+}
+
+.heroContent p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+  letter-spacing: 0.05em;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.storySection {
+  background-color: var(--color-ivory);
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.lead {
+  font-size: 1.25rem;
+  color: var(--color-champagne);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.textContent p {
+  line-height: 1.8;
+  color: var(--color-brown);
+}
+
+.imageContent {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  position: relative;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  background: var(--color-beige);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--color-champagne);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  border: 1px solid rgba(195, 162, 112, 0.2);
+}
+
+.valuesSection {
+  background-color: var(--color-forest);
+  color: var(--color-ivory);
+}
+
+.valuesSection .section-title {
+  color: var(--color-champagne);
+}
+
+.valuesSection .section-subtitle {
+  color: var(--color-beige);
+  opacity: 0.8;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.valueCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(195, 162, 112, 0.1);
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.valueCard:hover {
+  transform: translateY(-10px);
+  border-color: var(--color-champagne);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.valueCard h3 {
+  color: var(--color-champagne);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.valueCard p {
+  line-height: 1.6;
+  color: var(--color-beige);
+  opacity: 0.9;
+}
+
+@media (max-width: 992px) {
+  .storyGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .imagePlaceholder {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContent h1 {
+    font-size: 3rem;
+  }
+}

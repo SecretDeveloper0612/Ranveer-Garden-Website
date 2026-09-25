@@ -1,0 +1,117 @@
+.section {
+  padding: 6rem 0;
+  background-color: var(--color-ivory);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+  max-width: 1000px;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-champagne);
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: clamp(1.8rem, 4vw, 3.5rem);
+  line-height: 1.1;
+  color: var(--color-forest);
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--color-charcoal);
+  opacity: 0.7;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tab {
+  background: rgba(16, 33, 23, 0.05);
+  border: 1px solid rgba(16, 33, 23, 0.1);
+  border-radius: 40px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-forest);
+  padding: 0.75rem 1.75rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tab:hover {
+  background: rgba(16, 33, 23, 0.1);
+}
+
+.tab.active {
+  background: var(--color-forest);
+  color: var(--color-ivory);
+  border-color: var(--color-forest);
+  box-shadow: 0 4px 15px rgba(16, 33, 23, 0.2);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+  margin-bottom: 5rem;
+}
+
+.imageWrapper {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+  background-color: #eee;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.imageWrapper img {
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.imageWrapper:hover img {
+  transform: scale(1.08);
+}
+
+.action {
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .imageWrapper { height: 300px; }
+}
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+  .imageWrapper { height: 280px; }
+  .tabs { gap: 0.5rem; }
+  .tab { padding: 0.5rem 1rem; font-size: 0.75rem; }
+}
