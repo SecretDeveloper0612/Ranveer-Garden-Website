@@ -56,7 +56,7 @@ export default function Testimonial() {
                 ★★★★★
               </div>
               <blockquote className={styles.quote}>
-                "{testimonial.quote}"
+                &quot;{testimonial.quote}&quot;
               </blockquote>
             </div>
           ))}

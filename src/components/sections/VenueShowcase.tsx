@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { venue } from '@/data/venue';
+
 import styles from './VenueShowcase.module.css';
 
 export default function VenueShowcase() {

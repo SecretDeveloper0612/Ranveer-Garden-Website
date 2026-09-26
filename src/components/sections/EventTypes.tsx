@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import styles from './EventTypes.module.css';
 
 export default function EventTypes() {
@@ -50,7 +49,7 @@ export default function EventTypes() {
         </div>
 
         <div className={styles.masonry}>
-          {events.map((event, index) => (
+          {events.map((event) => (
             <div 
               key={event.slug} 
               className={`${styles.card} ${styles[event.size]}`}

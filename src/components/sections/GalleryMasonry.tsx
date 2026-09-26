@@ -13,7 +13,7 @@ export default function GalleryMasonry() {
             Our master chefs curate multi-cuisine menus that delight the senses and leave a lasting impression.
           </p>
           <div className={styles.card}>
-            <p>"Taste the essence of celebration in every bite."</p>
+            <p>&quot;Taste the essence of celebration in every bite.&quot;</p>
             <p className={styles.subtext}>Our custom menus ensure your guests enjoy every moment, from the welcome drinks to the grand feast.</p>
           </div>
           <a href="/dining" className={styles.link}>EXPLORE CATERING MENU &rarr;</a>

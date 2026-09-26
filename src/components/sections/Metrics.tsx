@@ -5,7 +5,7 @@ import styles from './Metrics.module.css';
 
 function Counter({ end, suffix = '', duration = 2000 }: { end: number | string, suffix?: string, duration?: number }) {
   const [count, setCount] = useState(0);
-  const nodeRef = useRef<HTMLSpanElement>(null);
+  const nodeRef = useRef<HTMLHeadingElement>(null);
   
   const isNumber = typeof end === 'number';
 

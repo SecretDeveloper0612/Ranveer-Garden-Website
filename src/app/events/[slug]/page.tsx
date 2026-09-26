@@ -80,7 +80,7 @@ export default function EventDetailPage({ params }: { params: { slug: string } }
             <p className={styles.description}>{data.description}</p>
             
             <div className={styles.features}>
-              <h3>What's Included</h3>
+              <h3>What&apos;s Included</h3>
               <ul>
                 {data.features.map((feature, idx) => (
                   <li key={idx}>

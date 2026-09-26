@@ -1,5 +1,5 @@
 import styles from './page.module.css';
-import Image from 'next/image';
+
 
 export const metadata = {
   title: 'Our Story | Ranveer Garden Resort & Banquet',
@@ -30,7 +30,7 @@ export default function AboutPage() {
               Our journey began with a simple yet ambitious goal: to create a space where every celebration becomes a monumental memory. From intimate gatherings to royal weddings, our venue is designed to cater to the most discerning guests.
             </p>
             <p>
-              We believe that true luxury lies in the details. That's why every aspect of our resort, from the manicured lawns to the opulent banquet halls, has been meticulously crafted to provide an unparalleled experience.
+              We believe that true luxury lies in the details. That&apos;s why every aspect of our resort, from the manicured lawns to the opulent banquet halls, has been meticulously crafted to provide an unparalleled experience.
             </p>
           </div>
           <div className={styles.imageContent}>
@@ -55,7 +55,7 @@ export default function AboutPage() {
             </div>
             <div className={styles.valueCard}>
               <h3>Hospitality</h3>
-              <p>Warmth, respect, and anticipation of our guests' needs are at the heart of our service.</p>
+              <p>Warmth, respect, and anticipation of our guests&apos; needs are at the heart of our service.</p>
             </div>
             <div className={styles.valueCard}>
               <h3>Integrity</h3>

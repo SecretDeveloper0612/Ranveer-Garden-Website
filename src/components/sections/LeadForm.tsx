@@ -24,7 +24,7 @@ export default function LeadForm() {
           <div className={styles.formColumn}>
             <div className={styles.formHeader}>
               <span className={styles.eyebrow}>INQUIRE NOW</span>
-              <h2 className={styles.title}>Let's plan your moment.</h2>
+              <h2 className={styles.title}>Let&apos;s plan your moment.</h2>
               <p className={styles.subtitle}>
                 Reach out to our event specialists and begin the journey toward an unforgettable celebration at Ranveer Garden.
               </p>
