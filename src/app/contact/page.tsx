@@ -32,7 +32,8 @@ export default function ContactPage() {
             <div className={styles.infoGroup}>
               <h3>Call Us</h3>
               <p><strong>Director:</strong> <a href={`tel:${contact.directorPhone}`}>{contact.directorPhone}</a></p>
-              <p><strong>Manager:</strong> <a href={`tel:${contact.managerPhone}`}>{contact.managerPhone}</a></p>
+              <p><strong>GM:</strong> <a href={`tel:${contact.managerPhone}`}>{contact.managerPhone}</a></p>
+              <p><strong>Booking Enquiry:</strong> <a href={`tel:${contact.bookingPhone}`}>{contact.bookingPhone}</a></p>
             </div>
 
             <div className={styles.infoGroup}>

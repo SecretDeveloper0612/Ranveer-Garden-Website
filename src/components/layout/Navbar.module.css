@@ -219,18 +219,22 @@
   }
 
   .nav.mobileOpen {
-    max-height: 400px;
-    padding: 2rem 0;
+    max-height: 100vh;
+    height: calc(100vh - 70px); /* Adjust for header height */
+    padding: 2rem 0 4rem 0;
+    justify-content: center;
+    gap: 1.5rem;
     opacity: 1;
   }
 
-  .header:not(.scrolled) .nav a {
+  /* Override higher specificity rules from desktop view */
+  .nav a,
+  .header:not(.scrolled) .nav a,
+  .header:not(.scrolled):not(.lightHeader) .nav a {
     color: var(--color-forest);
-  }
-
-  .nav a {
-    font-size: 1rem;
+    font-size: 1.25rem;
     padding: 1rem;
+    letter-spacing: 0.2em;
   }
 
   .contactInfo {

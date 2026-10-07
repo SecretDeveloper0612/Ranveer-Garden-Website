@@ -95,7 +95,7 @@ export default function Metrics() {
         <div className={styles.banner}>
           <div className={styles.image}>
             <Image 
-              src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80" 
+              src="/drive-download-20260530T053437Z-3-001/_DSC0935-HDR copy.jpg" 
               alt="Banquet overview" 
               fill 
               style={{ objectFit: 'cover' }}

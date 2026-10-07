@@ -1,0 +1,423 @@
+.main {
+  background-color: var(--color-ivory);
+  padding: 8rem 0;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1280px;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+.backLink {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  color: var(--color-charcoal);
+  opacity: 0.7;
+}
+.backLink:hover { opacity: 1; }
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--color-forest);
+  margin-bottom: 0.5rem;
+}
+
+.subHeader {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--color-charcoal);
+  font-weight: 500;
+  align-items: center;
+}
+
+.airbnbGallery {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  height: 500px;
+  margin-bottom: 3rem;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.mainImage {
+  position: relative;
+  height: 100%;
+  cursor: pointer;
+}
+
+.mainImage img:hover, .sideImage img:hover {
+  filter: brightness(0.9);
+  transition: filter 0.2s ease;
+}
+
+.sideImages {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.sideImage {
+  position: relative;
+  height: 100%;
+  cursor: pointer;
+}
+
+.viewMoreBtn {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: white;
+  border: 1px solid rgba(0,0,0,0.8);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  z-index: 10;
+}
+
+.viewMoreBtn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.galleryModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.9);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.closeBtn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.modalContent {
+  position: relative;
+  width: 90%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.modalImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+}
+
+.modalNavBtn {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.modalNavBtn:hover {
+  background: rgba(255,255,255,0.2);
+  transform: scale(1.05);
+}
+
+.imageCounter {
+  color: white;
+  margin-top: 1rem;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+}
+
+.contentSplit {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.leftContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.hostInfo h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-forest);
+  margin-bottom: 0.5rem;
+}
+
+.hostInfo p {
+  color: var(--color-charcoal);
+  opacity: 0.8;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  margin: 2.5rem 0;
+}
+
+.description h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-forest);
+  margin-bottom: 1.5rem;
+}
+
+.description p {
+  line-height: 1.6;
+  color: var(--color-charcoal);
+  opacity: 0.9;
+}
+
+.sleepSection h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-forest);
+  margin-bottom: 1.5rem;
+}
+
+.sleepCards {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.sleepCard {
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 200px;
+}
+
+.sleepCard h3 {
+  font-size: 1.1rem;
+  margin: 1rem 0 0.5rem;
+  color: var(--color-forest);
+}
+
+.sleepCard p {
+  font-size: 0.9rem;
+  color: var(--color-charcoal);
+  opacity: 0.8;
+}
+
+.features h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-forest);
+  margin-bottom: 1.5rem;
+}
+
+.features ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem 2rem;
+}
+
+.features li {
+  position: relative;
+  padding-left: 2rem;
+  color: var(--color-charcoal);
+  opacity: 0.9;
+}
+
+.features li::before {
+  content: '✓';
+  color: var(--color-forest);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.thingsToKnow h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-forest);
+  margin-bottom: 1.5rem;
+}
+
+.rulesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.ruleColumn h3 {
+  font-size: 1rem;
+  color: var(--color-forest);
+  margin-bottom: 1rem;
+}
+
+.ruleColumn p {
+  font-size: 0.9rem;
+  color: var(--color-charcoal);
+  opacity: 0.8;
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+}
+
+.rightContent {
+  position: relative;
+}
+
+.bookingCard {
+  position: sticky;
+  top: 100px;
+  background: white;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.cardHeader {
+  margin-bottom: 1.5rem;
+}
+
+.cardHeader h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-forest);
+}
+
+.cardHeader p {
+  font-size: 0.9rem;
+  color: var(--color-charcoal);
+  opacity: 0.8;
+}
+
+.datePicker {
+  display: flex;
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 8px 8px 0 0;
+  border-bottom: none;
+}
+
+.dateInput {
+  flex: 1;
+  padding: 0.8rem;
+}
+
+.dateInput:first-child {
+  border-right: 1px solid rgba(0,0,0,0.3);
+}
+
+.dateInput label, .guestsInput label {
+  display: block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.dateInput span, .guestsInput span {
+  font-size: 0.9rem;
+  color: var(--color-charcoal);
+  opacity: 0.7;
+}
+
+.guestsInput {
+  padding: 0.8rem;
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 0 0 8px 8px;
+  margin-bottom: 1rem;
+}
+
+.reserveBtn {
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.chargeText {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-charcoal);
+  opacity: 0.7;
+  margin-top: 1rem;
+}
+
+@media (max-width: 992px) {
+  .contentSplit {
+    grid-template-columns: 1fr;
+  }
+  
+  .bookingCard {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .airbnbGallery {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  
+  .mainImage {
+    height: 300px;
+  }
+  
+  .sideImages {
+    display: none;
+  }
+}

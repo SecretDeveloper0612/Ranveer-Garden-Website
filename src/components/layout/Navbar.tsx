@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { contact } from '@/data/contact';
 import styles from './Navbar.module.css';
@@ -11,7 +12,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const isLightHeader = pathname === '/contact';
+  const isLightHeader = pathname === '/contact' || pathname.startsWith('/rooms/');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,12 +27,17 @@ export default function Navbar() {
       <div className={styles.navContainer}>
         <Link href="/" className={styles.logo}>
           <div className={styles.logoMark}>
-            {/* Using a simple text logo representing the mark in the mockup */}
-            <span style={{color: 'var(--color-champagne)'}}>R</span>
+            <Image 
+              src="/Images/logo2.png" 
+              alt="Ranveer Garden Resort Logo" 
+              width={40} 
+              height={40} 
+              style={{ objectFit: 'contain' }} 
+            />
           </div>
           <div className={styles.logoText}>
             <span>RANVEER</span>
-            <small>THE GARDEN RESORT & BANQUET</small>
+            <small>THE GARDEN RESORT</small>
           </div>
         </Link>
 

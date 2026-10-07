@@ -134,7 +134,9 @@
 .watermark {
   position: absolute;
   bottom: 0;
-  left: 5%;
+  left: 0;
+  display: flex;
+  width: max-content;
   font-family: var(--font-heading);
   font-size: clamp(8rem, 20vw, 22rem);
   font-weight: 700;
@@ -143,6 +145,17 @@
   white-space: nowrap;
   pointer-events: none;
   z-index: 1;
+  animation: scrollWatermark 120s linear infinite;
+  will-change: transform;
+}
+
+@keyframes scrollWatermark {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .bottomSection {

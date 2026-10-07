@@ -28,7 +28,7 @@ export default function Introduction() {
         
         <div className={styles.imageWrapper}>
           <Image 
-            src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80" 
+            src="/drive-download-20260530T053437Z-3-001/_DSC0901-HDR copy.jpg" 
             alt="Ranveer Garden Venue" 
             fill 
             className={styles.image}

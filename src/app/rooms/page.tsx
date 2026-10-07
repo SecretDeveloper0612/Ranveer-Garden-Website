@@ -1,41 +1,13 @@
 import styles from './page.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
+import RoomImageSlider from './RoomImageSlider';
+import { rooms } from '@/data/rooms';
 
 export const metadata = {
   title: 'Luxury Rooms & Suites | Ranveer Garden',
   description: 'Experience unparalleled luxury and comfort in our meticulously designed rooms and suites.',
 };
-
-const rooms = [
-  {
-    id: 'deluxe',
-    name: 'Deluxe Suite',
-    description: 'A spacious haven offering panoramic garden views, featuring modern amenities, a plush king-size bed, and an elegant seating area perfect for relaxation.',
-    size: '450 sq.ft',
-    occupancy: '2 Adults, 1 Child',
-    features: ['King-size bed', 'Garden view', 'En-suite bathroom', 'Mini-bar', 'Free Wi-Fi'],
-    image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80'
-  },
-  {
-    id: 'premium',
-    name: 'Premium Suite',
-    description: 'Elevate your stay in our Premium Suite. This exceptionally designed space features a separate living area, premium furnishings, and enhanced amenities for the ultimate comfort.',
-    size: '600 sq.ft',
-    occupancy: '2 Adults, 2 Children',
-    features: ['Separate living room', 'Premium toiletries', 'Bathtub', 'Work desk', '24-hour room service'],
-    image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&q=80'
-  },
-  {
-    id: 'royal',
-    name: 'The Royal Villa',
-    description: 'Our most exclusive offering. The Royal Villa provides unparalleled privacy and luxury, complete with a private plunge pool, dedicated butler service, and exquisite décor.',
-    size: '1200 sq.ft',
-    occupancy: '4 Adults',
-    features: ['Private pool', 'Butler service', 'Two bedrooms', 'Dining area', 'Lounge access'],
-    image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80'
-  }
-];
 
 export default function RoomsPage() {
   return (
@@ -64,13 +36,7 @@ export default function RoomsPage() {
             {rooms.map((room, index) => (
               <div key={room.id} className={`${styles.roomCard} ${index % 2 !== 0 ? styles.roomCardReverse : ''}`}>
                 <div className={styles.roomImage}>
-                  <Image
-                    src={room.image}
-                    alt={room.name}
-                    fill
-                    style={{ objectFit: 'cover' }}
-                    className={styles.image}
-                  />
+                  <RoomImageSlider images={room.images} alt={room.name} />
                 </div>
                 <div className={styles.roomInfo}>
                   <h2>{room.name}</h2>
@@ -97,7 +63,7 @@ export default function RoomsPage() {
                   </div>
 
                   <div className={styles.actions}>
-                    <Link href="/contact" className="btn-primary">Reserve Now</Link>
+                    <Link href={`/rooms/${room.id}`} className="btn-primary">Reserve Now</Link>
                   </div>
                 </div>
               </div>

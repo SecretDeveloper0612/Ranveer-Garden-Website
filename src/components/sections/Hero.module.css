@@ -1,12 +1,11 @@
 .hero {
   position: relative;
   height: 100vh;
-  min-height: 800px;
+  min-height: max(500px, 80vh);
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Use a palace/resort night aesthetic as per mockup */
-  background: url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80');
+  background: url('/drive-download-20260530T053730Z-3-001/_DSC1269-HDR copy.jpg');
   background-size: cover;
   background-position: center;
   color: var(--color-ivory);

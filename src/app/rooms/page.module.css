@@ -114,6 +114,43 @@
   transform: scale(1.05);
 }
 
+.sliderControls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.roomImage:hover .sliderControls {
+  opacity: 1;
+}
+
+.sliderBtn {
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-forest);
+  transition: background 0.2s;
+  font-size: 1.2rem;
+}
+
+.sliderBtn:hover {
+  background: white;
+}
+
 .roomInfo {
   display: flex;
   flex-direction: column;

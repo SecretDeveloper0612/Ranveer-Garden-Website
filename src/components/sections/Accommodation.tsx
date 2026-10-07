@@ -1,3 +1,5 @@
+'use client';
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Accommodation.module.css';
@@ -14,26 +16,82 @@ const SizeIcon = () => (
   </svg>
 );
 
+const RoomCard = ({ room }: { room: any }) => {
+  const [currentIdx, setCurrentIdx] = useState(0);
+
+  const nextImage = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setCurrentIdx((prev) => (prev + 1) % room.images.length);
+  };
+
+  const prevImage = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setCurrentIdx((prev) => (prev - 1 + room.images.length) % room.images.length);
+  };
+
+  return (
+    <div className={styles.card}>
+      <div className={styles.image}>
+        <Image 
+          src={room.images[currentIdx]} 
+          alt={room.title} 
+          fill 
+          style={{ objectFit: 'cover' }}
+        />
+        {room.images.length > 1 && (
+          <div className={styles.sliderControls}>
+            <button className={styles.sliderBtn} onClick={prevImage}>&larr;</button>
+            <button className={styles.sliderBtn} onClick={nextImage}>&rarr;</button>
+          </div>
+        )}
+      </div>
+      <div className={styles.content}>
+        <h3>{room.title}</h3>
+        <p>{room.desc}</p>
+        <div className={styles.meta}>
+          <div className={styles.metaItem}>
+            <span className={styles.icon}><BedIcon /></span>
+            <span>{room.beds}</span>
+          </div>
+          <div className={styles.metaItem}>
+            <span className={styles.icon}><SizeIcon /></span>
+            <span>{room.size}</span>
+          </div>
+        </div>
+        <Link href="/rooms" className={styles.link}>
+          EXPLORE ROOMS &rarr;
+        </Link>
+      </div>
+    </div>
+  );
+};
+
 export default function Accommodation() {
   const rooms = [
     {
       title: 'Premium Room',
       desc: 'Elegant rooms featuring plush bedding and beautiful garden views.',
-      image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80',
+      images: [
+        '/drive-download-20260530T054117Z-3-001/_DSC0779-HDR-2 copy.jpg',
+        '/drive-download-20260530T054117Z-3-001/_DSC0789-HDR copy.jpg',
+        '/drive-download-20260530T054117Z-3-001/_DSC0799-HDR-2 copy.jpg',
+        '/drive-download-20260530T054117Z-3-001/_DSC0819-HDR copy.jpg',
+        '/drive-download-20260530T054117Z-3-001/_DSC0824-HDR copy.jpg'
+      ],
       beds: '1 King Bed',
       size: '300 sq.ft',
     },
     {
       title: 'Royal Suite & Family Rooms',
       desc: 'Spacious suites designed for families and VIP guests with living areas.',
-      image: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&q=80',
+      images: ['https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&q=80'],
       beds: '2 Queen Beds',
       size: '500 sq.ft',
     },
     {
       title: 'Executive & Presidential Suites',
       desc: 'The pinnacle of luxury with expansive spaces and premium amenities.',
-      image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&q=80',
+      images: ['https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&q=80'],
       beds: '1 King Bed',
       size: '800 sq.ft',
     }
@@ -52,33 +110,7 @@ export default function Accommodation() {
 
         <div className={styles.grid}>
           {rooms.map((room, i) => (
-            <div key={i} className={styles.card}>
-              <div className={styles.image}>
-                <Image 
-                  src={room.image} 
-                  alt={room.title} 
-                  fill 
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-              <div className={styles.content}>
-                <h3>{room.title}</h3>
-                <p>{room.desc}</p>
-                <div className={styles.meta}>
-                  <div className={styles.metaItem}>
-                    <span className={styles.icon}><BedIcon /></span>
-                    <span>{room.beds}</span>
-                  </div>
-                  <div className={styles.metaItem}>
-                    <span className={styles.icon}><SizeIcon /></span>
-                    <span>{room.size}</span>
-                  </div>
-                </div>
-                <Link href="/rooms" className={styles.link}>
-                  EXPLORE ROOMS &rarr;
-                </Link>
-              </div>
-            </div>
+            <RoomCard key={i} room={room} />
           ))}
         </div>
       </div>

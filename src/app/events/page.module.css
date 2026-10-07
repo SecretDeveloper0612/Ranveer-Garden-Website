@@ -6,7 +6,7 @@
 .hero {
   position: relative;
   height: 60vh;
-  min-height: 500px;
+  min-height: max(400px, 50vh);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -221,5 +221,24 @@
   
   .eventsList {
     gap: 5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .eventContent h2 {
+    font-size: 2.2rem;
+  }
+  
+  .eventImage {
+    min-height: 300px;
+  }
+  
+  .eventsList {
+    gap: 3.5rem;
+  }
+  
+  .eventContent p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
   }
 }

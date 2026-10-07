@@ -6,7 +6,7 @@
 .hero {
   position: relative;
   height: 60vh;
-  min-height: 500px;
+  min-height: max(400px, 50vh);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,7 +112,7 @@
 .gridItem {
   position: relative;
   grid-column: span 4;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1/1; /* Or 4/3 depending on preference, 1/1 is a good square card */
   border-radius: 16px;
   overflow: hidden;
   background-color: var(--color-beige);
@@ -125,57 +125,17 @@
   box-shadow: 0 15px 40px rgba(16, 33, 23, 0.1);
 }
 
-/* 1. Large Feature */
-.gridItem:nth-child(7n + 1) {
-  grid-column: span 8;
-  aspect-ratio: 16/9;
-}
-
-/* 2. Standard */
-.gridItem:nth-child(7n + 2) {
-  grid-column: span 4;
-  aspect-ratio: 4/5;
-}
-
-/* 3. Wide Panorama */
-.gridItem:nth-child(7n + 4) {
-  grid-column: span 12;
-  aspect-ratio: 21/9;
-}
-
-/* 4. Offset Feature */
-.gridItem:nth-child(7n + 5) {
-  grid-column: span 8;
-  aspect-ratio: 16/9;
-}
-
-/* 5. Standard Tall */
-.gridItem:nth-child(7n + 7) {
-  grid-column: span 4;
-  aspect-ratio: 3/4;
-}
-
 @media (max-width: 992px) {
-  .gridItem, 
-  .gridItem:nth-child(7n + 1),
-  .gridItem:nth-child(7n + 2),
-  .gridItem:nth-child(7n + 4),
-  .gridItem:nth-child(7n + 5),
-  .gridItem:nth-child(7n + 7) {
+  .gridItem {
     grid-column: span 6;
-    aspect-ratio: 4/5;
+    aspect-ratio: 1/1;
   }
 }
 
 @media (max-width: 768px) {
-  .gridItem, 
-  .gridItem:nth-child(7n + 1),
-  .gridItem:nth-child(7n + 2),
-  .gridItem:nth-child(7n + 4),
-  .gridItem:nth-child(7n + 5),
-  .gridItem:nth-child(7n + 7) {
+  .gridItem {
     grid-column: span 12;
-    aspect-ratio: 4/5;
+    aspect-ratio: 4/3;
   }
 }
 
@@ -233,4 +193,76 @@
 .imageWrapper:hover .imageTitle,
 .imageWrapper:hover .imageCategory {
   transform: translateY(0);
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modalContent {
+  position: relative;
+  width: 90vw;
+  height: 90vh;
+  max-width: 1200px;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+  transition: opacity 0.3s ease;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  z-index: 1001;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.navBtn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.imageCounter {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  z-index: 1001;
 }
