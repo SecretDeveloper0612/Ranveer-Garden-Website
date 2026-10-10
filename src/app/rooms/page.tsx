@@ -15,7 +15,7 @@ export default function RoomsPage() {
       <section className={styles.hero}>
         <div className={styles.heroImage}>
           <Image 
-            src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&q=80"
+            src="/drive-download-20260530T053437Z-3-001/_DSC0774-HDR copy.jpg"
             alt="Luxury Accommodation"
             fill
             style={{ objectFit: 'cover' }}

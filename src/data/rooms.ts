@@ -1,26 +1,43 @@
 export const rooms = [
   {
-    id: 'deluxe',
-    name: 'Deluxe Suite',
+    id: 'superior',
+    name: 'Superior Room',
     description: 'A spacious haven offering panoramic garden views, featuring modern amenities, a plush king-size bed, and an elegant seating area perfect for relaxation.',
     size: '450 sq.ft',
     occupancy: '2 Adults, 1 Child',
     features: ['King-size bed', 'Garden view', 'En-suite bathroom', 'Mini-bar', 'Free Wi-Fi'],
-    images: ['https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80']
+    images: [
+      '/Superior Room/_DSC0553-HDR-2 copy.jpg',
+      '/Superior Room/_DSC0563-HDR copy.jpg',
+      '/Superior Room/_DSC0568-HDR copy.jpg',
+      '/Superior Room/_DSC0573-HDR-2 copy.jpg',
+      '/Superior Room/_DSC0578-HDR-2 copy.jpg',
+      '/Superior Room/_DSC0583-HDR copy.jpg',
+      '/Superior Room/_DSC0588-HDR copy.jpg',
+      '/Superior Room/_DSC0597-HDR copy.jpg',
+      '/Superior Room/_DSC0602-HDR copy.jpg',
+      '/Superior Room/_DSC0607-HDR copy.jpg',
+      '/Superior Room/_DSC0612-HDR copy.jpg',
+      '/Superior Room/_DSC0621-HDR copy.jpg',
+      '/Superior Room/_DSC0626-HDR copy.jpg',
+      '/Superior Room/_DSC0631-HDR copy.jpg'
+    ]
   },
   {
-    id: 'premium',
-    name: 'Premium Suite',
-    description: 'Elevate your stay in our Premium Suite. This exceptionally designed space features a separate living area, premium furnishings, and enhanced amenities for the ultimate comfort.',
+    id: 'suite',
+    name: 'Suite Room',
+    description: 'Elevate your stay in our Suite Room. This exceptionally designed space features a separate living area, premium furnishings, and enhanced amenities for the ultimate comfort.',
     size: '600 sq.ft',
     occupancy: '2 Adults, 2 Children',
     features: ['Separate living room', 'Premium toiletries', 'Bathtub', 'Work desk', '24-hour room service'],
     images: [
-      '/drive-download-20260530T054117Z-3-001/_DSC0779-HDR-2 copy.jpg',
-      '/drive-download-20260530T054117Z-3-001/_DSC0789-HDR copy.jpg',
-      '/drive-download-20260530T054117Z-3-001/_DSC0799-HDR-2 copy.jpg',
-      '/drive-download-20260530T054117Z-3-001/_DSC0819-HDR copy.jpg',
-      '/drive-download-20260530T054117Z-3-001/_DSC0824-HDR copy.jpg'
+      '/Suite Room/_DSC0804-HDR copy.jpg',
+      '/Suite Room/_DSC0809-HDR copy.jpg',
+      '/Suite Room/_DSC0819-HDR copy.jpg',
+      '/Suite Room/_DSC0824-HDR copy.jpg',
+      '/Suite Room/image1.jpeg.jpg',
+      '/Suite Room/image2.jpeg.jpg',
+      '/Suite Room/image3.jpeg.jpg'
     ]
   },
   {

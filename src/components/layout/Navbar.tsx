@@ -52,7 +52,7 @@ export default function Navbar() {
         <div className={styles.navActions}>
           <div className={styles.contactInfo}>
             <span>CALL US</span>
-            <a href={`tel:${contact.directorPhone}`}>{contact.directorPhone}</a>
+            <a href={`tel:${contact.bookingPhone}`}>{contact.bookingPhone}</a>
           </div>
           <Link href="/plan-your-event" className={`btn-primary ${styles.planBtn}`}>
             PLAN YOUR EVENT

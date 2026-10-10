@@ -47,6 +47,13 @@ export default function ContactPage() {
                 Chat with us &rarr;
               </a>
             </div>
+
+            <div className={styles.infoGroup}>
+              <h3>Address</h3>
+              <p>{contact.address.line1}</p>
+              <p>{contact.address.line2}</p>
+              <p>{contact.address.city}, {contact.address.state} {contact.address.zip}</p>
+            </div>
           </div>
 
           <div className={styles.contactFormWrapper}>
