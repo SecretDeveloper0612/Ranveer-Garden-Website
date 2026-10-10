@@ -30,9 +30,9 @@ export default function Navbar() {
             <Image 
               src="/Images/logo2.png" 
               alt="Ranveer Garden Resort Logo" 
-              width={40} 
-              height={40} 
-              style={{ objectFit: 'contain' }} 
+              width={70} 
+              height={70} 
+              style={{ objectFit: 'contain', margin: '-15px 0' }} 
             />
           </div>
           <div className={styles.logoText}>

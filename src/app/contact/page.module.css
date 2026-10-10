@@ -34,7 +34,7 @@
 .contactForm h2 {
   font-size: 2rem;
   font-family: var(--font-heading);
-  color: var(--color-forest);
+  color: var(--color-ivory);
   margin-bottom: 2rem;
 }
 
@@ -88,10 +88,10 @@
 }
 
 .contactFormWrapper {
-  background: white;
+  background: var(--color-forest);
   padding: 4rem;
   border-radius: 40px;
-  box-shadow: 0 20px 60px rgba(16, 33, 23, 0.05);
+  box-shadow: 0 20px 60px rgba(16, 33, 23, 0.2);
   border: 1px solid rgba(195, 162, 112, 0.1);
 }
 
@@ -122,7 +122,8 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--color-charcoal);
+  color: var(--color-ivory);
+  opacity: 0.9;
 }
 
 .formGroup input,
@@ -130,13 +131,23 @@
 .formGroup textarea {
   width: 100%;
   padding: 1.2rem;
-  border: 1px solid rgba(16, 33, 23, 0.1);
+  border: 1px solid rgba(250, 248, 243, 0.2);
   border-radius: 12px;
-  background: var(--color-ivory);
+  background: rgba(250, 248, 243, 0.05);
   font-family: inherit;
   font-size: 1rem;
-  color: var(--color-charcoal);
+  color: var(--color-ivory);
   transition: all 0.3s ease;
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: rgba(250, 248, 243, 0.5);
+}
+
+.formGroup select option {
+  color: var(--color-charcoal);
+  background: var(--color-ivory);
 }
 
 .formGroup input:focus,
@@ -145,7 +156,7 @@
   outline: none;
   border-color: var(--color-champagne);
   box-shadow: 0 0 0 4px rgba(195, 162, 112, 0.1);
-  background: white;
+  background: rgba(250, 248, 243, 0.1);
 }
 
 .mapSection {

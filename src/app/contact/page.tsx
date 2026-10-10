@@ -92,7 +92,7 @@ export default function ContactPage() {
                   <textarea id="message" name="message" rows={5} required placeholder="How can we help you?"></textarea>
                 </div>
                 
-                <button type="submit" className="btn-primary" style={{ width: '100%', marginTop: '1rem' }}>
+                <button type="submit" className="btn-outline" style={{ width: '100%', marginTop: '1rem' }}>
                   Send Message
                 </button>
               </form>
