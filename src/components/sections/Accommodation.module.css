@@ -90,6 +90,12 @@
   opacity: 1;
 }
 
+@media (hover: none) {
+  .sliderControls {
+    opacity: 1;
+  }
+}
+
 .sliderBtn {
   background: rgba(255, 255, 255, 0.8);
   border: none;

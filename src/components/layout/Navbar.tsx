@@ -42,11 +42,25 @@ export default function Navbar() {
         </Link>
 
         <nav className={`${styles.nav} ${mobileMenuOpen ? styles.mobileOpen : ''}`}>
-          <Link href="/">DISCOVER</Link>
-          <Link href="/rooms">ROOMS</Link>
-          <Link href="/events">EVENTS & WEDDINGS</Link>
-          <Link href="/gallery">GALLERY</Link>
-          <Link href="/contact">CONTACT</Link>
+          {[
+            { href: '/', label: 'DISCOVER', isActive: (p: string) => p === '/' },
+            { href: '/rooms', label: 'ROOMS', isActive: (p: string) => p === '/rooms' || p.startsWith('/rooms/') },
+            { href: '/events', label: 'EVENTS & WEDDINGS', isActive: (p: string) => p === '/events' || p.startsWith('/events/') },
+            { href: '/gallery', label: 'GALLERY', isActive: (p: string) => p === '/gallery' || p.startsWith('/gallery/') },
+            { href: '/contact', label: 'CONTACT', isActive: (p: string) => p === '/contact' || p.startsWith('/contact/') },
+          ].map((item) => {
+            const active = item.isActive(pathname);
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={active ? styles.active : ''}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className={styles.navActions}>

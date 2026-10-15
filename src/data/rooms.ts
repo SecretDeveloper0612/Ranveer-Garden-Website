@@ -1,4 +1,14 @@
-export const rooms = [
+export interface Room {
+  id: string;
+  name: string;
+  description: string;
+  size: string;
+  occupancy: string;
+  features: string[];
+  images: string[];
+}
+
+export const rooms: Room[] = [
   {
     id: 'superior',
     name: 'Superior Room',

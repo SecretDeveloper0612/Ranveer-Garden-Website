@@ -8,7 +8,7 @@ const eventsData: Record<string, { title: string, subtitle: string, image: strin
   'wedding': {
     title: 'Wedding & Pre-wedding',
     subtitle: 'The perfect start to your forever.',
-    image: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80',
+    image: '/New Images/IMG-20260706-WA0004.jpg',
     description: 'Celebrate the beginning of your lifelong journey together in a venue that reflects the grandeur of your love story. Our luxurious banquet halls and sprawling lawns provide the perfect canvas for your wedding and pre-wedding ceremonies.',
     features: ['Grand Pillar-less Banquet Hall', 'Spacious Lush Green Lawns', 'Premium Decor Options', 'Dedicated Bridal Suite', 'Gourmet Catering']
   },
@@ -29,7 +29,7 @@ const eventsData: Record<string, { title: string, subtitle: string, image: strin
   'corporate': {
     title: 'Corporate Events',
     subtitle: 'Professional spaces for growth.',
-    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&q=80',
+    image: '/New Images/IMG_20260731_195827117_HDR.jpg',
     description: 'Host your product launches, seminars, and corporate retreats with us. We provide state-of-the-art facilities and a professional environment that leaves a lasting impression on your clients and team.',
     features: ['High-speed Wi-Fi', 'Audio/Visual Equipment', 'Formal Seating', 'Networking Area', 'Executive Catering']
   },
@@ -46,8 +46,9 @@ export async function generateStaticParams() {
   return Object.keys(eventsData).map((slug) => ({ slug }));
 }
 
-export default function EventDetailPage({ params }: { params: { slug: string } }) {
-  const data = eventsData[params.slug];
+export default async function EventDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const data = eventsData[slug];
 
   if (!data) {
     notFound();

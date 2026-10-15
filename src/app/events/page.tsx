@@ -12,7 +12,7 @@ const eventTypes = [
     slug: 'wedding',
     title: 'Wedding & Pre-wedding',
     description: 'Celebrate the beginning of your lifelong journey together in a venue that reflects the grandeur of your love story. Our luxurious banquet halls and sprawling lawns provide the perfect canvas for your ceremonies.',
-    image: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80'
+    image: '/New Images/IMG-20260706-WA0004.jpg'
   },
   {
     slug: 'social',
@@ -30,7 +30,7 @@ const eventTypes = [
     slug: 'corporate',
     title: 'Corporate Events',
     description: 'Host your product launches, seminars, and corporate retreats with us. We provide state-of-the-art facilities and a professional environment that leaves a lasting impression.',
-    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&q=80'
+    image: '/New Images/IMG_20260731_195827117_HDR.jpg'
   },
   {
     slug: 'exhibition',

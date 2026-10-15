@@ -6,7 +6,7 @@ export default function EventTypes() {
       slug: 'wedding',
       name: 'Wedding & Pre-wedding',
       description: 'The perfect start to your forever.',
-      image: '/drive-download-20260530T053730Z-3-001/_DSC1214-HDR copy.jpg',
+      image: '/New Images/IMG-20260706-WA0004.jpg',
     },
     {
       slug: 'social',
@@ -24,7 +24,7 @@ export default function EventTypes() {
       slug: 'corporate',
       name: 'Corporate Events',
       description: 'Professional spaces for growth.',
-      image: '/drive-download-20260530T053437Z-3-001/_DSC1080-HDR copy.jpg',
+      image: '/New Images/IMG_20260731_195827117_HDR.jpg',
     },
     {
       slug: 'exhibition',

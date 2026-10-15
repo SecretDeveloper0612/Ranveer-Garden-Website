@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { rooms, Room } from '@/data/rooms';
 import styles from './Accommodation.module.css';
 
 const BedIcon = () => (
@@ -16,16 +17,26 @@ const SizeIcon = () => (
   </svg>
 );
 
-const RoomCard = ({ room }: { room: any }) => {
+const getBedInfo = (room: Room) => {
+  if (room.id === 'superior') return '1 King Bed';
+  if (room.id === 'suite') return '1 King Bed';
+  if (room.id === 'royal') return '2 Bedrooms';
+  const bedFeature = room.features?.find(f => f.toLowerCase().includes('bed'));
+  return bedFeature || room.occupancy;
+};
+
+const RoomCard = ({ room }: { room: Room }) => {
   const [currentIdx, setCurrentIdx] = useState(0);
 
   const nextImage = (e: React.MouseEvent) => {
     e.preventDefault();
+    e.stopPropagation();
     setCurrentIdx((prev) => (prev + 1) % room.images.length);
   };
 
   const prevImage = (e: React.MouseEvent) => {
     e.preventDefault();
+    e.stopPropagation();
     setCurrentIdx((prev) => (prev - 1 + room.images.length) % room.images.length);
   };
 
@@ -34,31 +45,31 @@ const RoomCard = ({ room }: { room: any }) => {
       <div className={styles.image}>
         <Image 
           src={room.images[currentIdx]} 
-          alt={room.title} 
+          alt={room.name} 
           fill 
           style={{ objectFit: 'cover' }}
         />
         {room.images.length > 1 && (
           <div className={styles.sliderControls}>
-            <button className={styles.sliderBtn} onClick={prevImage}>&larr;</button>
-            <button className={styles.sliderBtn} onClick={nextImage}>&rarr;</button>
+            <button className={styles.sliderBtn} onClick={prevImage} aria-label="Previous image">&larr;</button>
+            <button className={styles.sliderBtn} onClick={nextImage} aria-label="Next image">&rarr;</button>
           </div>
         )}
       </div>
       <div className={styles.content}>
-        <h3>{room.title}</h3>
-        <p>{room.desc}</p>
+        <h3>{room.name}</h3>
+        <p>{room.description}</p>
         <div className={styles.meta}>
           <div className={styles.metaItem}>
             <span className={styles.icon}><BedIcon /></span>
-            <span>{room.beds}</span>
+            <span>{getBedInfo(room)}</span>
           </div>
           <div className={styles.metaItem}>
             <span className={styles.icon}><SizeIcon /></span>
             <span>{room.size}</span>
           </div>
         </div>
-        <Link href="/rooms" className={styles.link}>
+        <Link href={`/rooms/${room.id}`} className={styles.link}>
           EXPLORE ROOMS &rarr;
         </Link>
       </div>
@@ -67,36 +78,6 @@ const RoomCard = ({ room }: { room: any }) => {
 };
 
 export default function Accommodation() {
-  const rooms = [
-    {
-      title: 'Premium Room',
-      desc: 'Elegant rooms featuring plush bedding and beautiful garden views.',
-      images: [
-        '/drive-download-20260530T054117Z-3-001/_DSC0779-HDR-2 copy.jpg',
-        '/drive-download-20260530T054117Z-3-001/_DSC0789-HDR copy.jpg',
-        '/drive-download-20260530T054117Z-3-001/_DSC0799-HDR-2 copy.jpg',
-        '/drive-download-20260530T054117Z-3-001/_DSC0819-HDR copy.jpg',
-        '/drive-download-20260530T054117Z-3-001/_DSC0824-HDR copy.jpg'
-      ],
-      beds: '1 King Bed',
-      size: '300 sq.ft',
-    },
-    {
-      title: 'Royal Suite & Family Rooms',
-      desc: 'Spacious suites designed for families and VIP guests with living areas.',
-      images: ['https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&q=80'],
-      beds: '2 Queen Beds',
-      size: '500 sq.ft',
-    },
-    {
-      title: 'Executive & Presidential Suites',
-      desc: 'The pinnacle of luxury with expansive spaces and premium amenities.',
-      images: ['https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&q=80'],
-      beds: '1 King Bed',
-      size: '800 sq.ft',
-    }
-  ];
-
   return (
     <section className={styles.section}>
       <div className={`container ${styles.container}`}>
@@ -109,8 +90,8 @@ export default function Accommodation() {
         </div>
 
         <div className={styles.grid}>
-          {rooms.map((room, i) => (
-            <RoomCard key={i} room={room} />
+          {rooms.map((room) => (
+            <RoomCard key={room.id} room={room} />
           ))}
         </div>
       </div>
